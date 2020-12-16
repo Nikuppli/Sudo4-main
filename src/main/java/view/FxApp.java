@@ -40,16 +40,13 @@ public class FxApp extends Application {
 
         JsonReaderResponse jsonReaderResponse = jsonReader.readJson("");
 
-        if(jsonReaderResponse.hasErrors()) {
-        } else {
-            GRID_TO_SOLVE = jsonReaderResponse.getSudokuGrid();
-            SudokuSolver sudoku = new SudokuSolver(GRID_TO_SOLVE);
+        GRID_TO_SOLVE = jsonReaderResponse.getSudokuGrid();
+        SudokuSolver sudoku = new SudokuSolver(GRID_TO_SOLVE);
+        sudoku.display();
+        if (sudoku.solve()) {
             sudoku.display();
-            if (sudoku.solve()) {
-                sudoku.display();
-            } else {
-                //System.out.println("Unsolvable");
-            }
+        } else {
+            System.out.println("Unsolvable");
         }
     }
 

@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="borderPane" maxWidth="670.0" prefHeight="740.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FxController">
+<BorderPane fx:id="borderPane" maxWidth="530.0" prefHeight="740.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FxController">
 
 
 
@@ -20,16 +20,16 @@
     <center>
         <HBox styleClass="center">
             <Pane styleClass="pane">
-                <TableView fx:id="tableViewLoad" />
-                <ListView fx:id="listViewLoad" layoutY="264.0" prefWidth="506.0" />
+                <TableView styleClass="tableBoard" fx:id="tableViewLoad" />
+                <ListView fx:id="listViewLoad" layoutY="264.0" />
 
-                <Label styleClass="h1" fx:id="actionTargetLoad" layoutY="320.0" />
-                <Label fx:id="actionTarget" layoutY="340.0" />
+                <Label fx:id="actionTargetLoad" layoutY="320.0" styleClass="h2" />
+                <Label fx:id="actionTarget" layoutY="360.0" />
 
             </Pane>
             <Pane styleClass="pane">
-                <TableView fx:id="tableViewSolved" />
-                <Label styleClass="h1" fx:id="actionTargetSolved" layoutY="320.0"  />
+                <TableView styleClass="tableBoard" fx:id="tableViewSolved" layoutX="14.0" />
+                <Label fx:id="actionTargetSolved" layoutX="14.0" layoutY="320.0" styleClass="h2" />
 
             </Pane>
         </HBox>
@@ -41,17 +41,13 @@
         <HBox styleClass="bottom">
             <Pane styleClass="pane">
                 <Button fx:id="onLoad" onAction="#onLoad" text="Json-Datei öffnen">
-                    <HBox.margin>
-                       <Insets left="20.0" />
-                    </HBox.margin>
+>
                 </Button>
             </Pane>
 
             <Pane styleClass="pane">
-                <Button onAction="#onSolve" text="Solve">
-                    <HBox.margin>
-                        <Insets left="20.0" />
-                    </HBox.margin>
+                <Button onAction="#onSolve" text="Solve" layoutX="14.0">
+
                 </Button>
             </Pane>
         </HBox>

@@ -1,7 +1,4 @@
-.pane {
-    -fx-pref-height: 600;
-    -fx-pref-width: 600;
-}
+
 .root {
     -fx-background-color: #9fd8ed;
 }
@@ -12,7 +9,8 @@
 }
 .center {
     -fx-alignment: CENTER_LEFT;
-    -fx-pref-height: 900;
+    -fx-pref-height: 470;
+    -fx-pref-width: 530;
     -fx-padding: 40;
 }
 .bottom {
@@ -20,33 +18,37 @@
     -fx-pref-height: 60;
     -fx-padding: 40;
 }
+.pane {
+    -fx-pref-height: 560;
+    -fx-pref-width: 285;
+}
 .h1 {
     -fx-font-size: 22;
-    -fx-text-fill: #FFF;
+    -fx-text-fill: #000;
     -fx-font-weight: 800;
 }
-#tableViewLoad {
-    -fx-pref-height: 245;
-    -fx-pref-width: 210;
-
-}
-#tableViewSolved {
-    -fx-pref-height: 245;
-    -fx-pref-width: 210;
-}
-#listViewLoad {
-    -fx-pref-height: 25;
-    -fx-pref-width: 590;
-}
-
-#onLoad {
-    -fx-border-insets: 20;
+.h2 {
+    -fx-font-size: 32;
+    -fx-font-weight: 800;
 }
 #actionTargetSolved{
     -fx-text-fill: red;
-
 }
 #actionTargetLoad{
     -fx-text-fill: green;
+}
 
+
+
+.tableBoard {
+    -fx-pref-height: 245;
+    -fx-pref-width: 210;
+}
+
+#listViewLoad {
+    -fx-pref-height: 35;
+    -fx-pref-width: 450;
+}
+#onLoad {
+    -fx-border-insets: 20;
 }
