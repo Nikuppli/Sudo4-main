@@ -1,0 +1,56 @@
+.pane {
+    -fx-pref-height: 600;
+    -fx-pref-width: 600;
+}
+.root {
+    -fx-background-color: #9fd8ed;
+}
+.top {
+    -fx-alignment: CENTER_LEFT;
+    -fx-pref-height: 40;
+    -fx-padding: 40;
+}
+.center {
+    -fx-alignment: CENTER_LEFT;
+    -fx-pref-height: 900;
+    -fx-padding: 40;
+}
+.bottom {
+    -fx-alignment: CENTER_LEFT;
+    -fx-pref-height: 60;
+    -fx-padding: 40;
+}
+.h1 {
+    -fx-font-size: 22;
+    -fx-text-fill: #FFF;
+    -fx-font-weight: 800;
+}
+#tableViewLoad {
+    -fx-pref-height: 245;
+    -fx-pref-width: 210;
+}
+#tableViewSolved {
+    -fx-pref-height: 245;
+    -fx-pref-width: 210;
+}
+#listViewLoad {
+    -fx-pref-height: 25;
+    -fx-pref-width: 590;
+}
+#name{
+    -fx-opacity: 0.5;
+}
+#onLoad {
+    -fx-border-insets: 20;
+}
+#btnName {
+    -fx-text-fill: #3333ff;
+    -fx-underline: true;
+}
+#textName {
+    -fx-text-fill: #FFF;
+    -fx-font-weight: 400;
+}
+TableColumn {
+    -fx-content-display: false;
+}

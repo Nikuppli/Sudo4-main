@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" maxWidth="670.0" prefHeight="740.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.test.myjavafx.FxController">
+
+
+
+    <top>
+        <HBox styleClass="top">
+            <Label styleClass="h1" text="Sudokusolver" />
+        </HBox>
+    </top>
+
+
+
+    <center>
+        <HBox styleClass="center">
+            <Pane styleClass="pane">
+                <TableView fx:id="tableViewLoad"/>
+                <ListView fx:id="listViewLoad"/>
+                <Label fx:id="actionTargetLoad" />
+
+            </Pane>
+            <Pane styleClass="pane">
+                <TableView fx:id="tableViewSolved" />
+                <Label fx:id="actionTargetSolved" />
+
+            </Pane>
+        </HBox>
+    </center>
+
+
+
+    <bottom>
+        <HBox styleClass="bottom">
+            <Label fx:id="textName" text="Name:" />
+            <TextField fx:id="name">
+                <HBox.margin>
+                   <Insets left="20.0" />
+                </HBox.margin>
+            </TextField>
+
+            <Button fx:id="btnName" onAction="#onName" text="Name">
+                <HBox.margin>
+                   <Insets left="20.0" />
+                </HBox.margin>
+            </Button>
+
+            <Label fx:id="actiontarget" />
+
+            <Button fx:id="onLoad" onAction="#onLoad" text="Json-Datei öffnen">
+                <HBox.margin>
+                   <Insets left="20.0" />
+                </HBox.margin>
+            </Button>
+
+            <Button onAction="#onSolve" text="Solve">
+                <HBox.margin>
+                    <Insets left="20.0" />
+                </HBox.margin>
+            </Button>
+         </HBox>
+    </bottom>
+
+
+
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+</BorderPane>
