@@ -9,14 +9,6 @@ public class SudokuSolver{
     public static final int SIZE = 9;
 
 
-    String test = "abc";
-    public String getTest() {
-        return test;
-    }
-    public void setTest(String test) {
-        this.test = test;
-    }
-
     public int[][] getBoard() {
         return board;
     }

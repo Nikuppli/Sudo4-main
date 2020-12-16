@@ -6,7 +6,6 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import java.io.*;
 
-
 public class JsonReader {
     // read Json-file
     public JsonReaderResponse readJson(String filePath) throws IOException, ParseException {
@@ -14,7 +13,6 @@ public class JsonReader {
         int [][] sudokuGrid = new int[9][9];
 
         if(filePath.isEmpty()) {
-            //System.out.println("Given path is not valid!!");
             response.setHasErrors(true);
             response.setMessage("Given path is not valid");
             return response;
@@ -25,13 +23,14 @@ public class JsonReader {
         JSONParser parser = new JSONParser();
         JSONObject jsonObject = (JSONObject) parser.parse(reader);
         if(!isValidInput(jsonObject)) {
-            //System.out.println("Given input file is not valid!!");
             response.setHasErrors(true);
             response.setMessage("Given input file is not valid");
             return response;
         }
+        else {
+            response.setMessage("Given input file is valid");
+        }
 
-        //System.out.println(jsonObject);
         JSONArray sudokuGridInput = (JSONArray) jsonObject.get("sudokuGrid");
         for(int i = 0; i < sudokuGridInput.size(); i++) {
             JSONArray row = (JSONArray) sudokuGridInput.get(i);

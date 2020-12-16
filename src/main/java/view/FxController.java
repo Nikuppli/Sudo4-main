@@ -1,10 +1,9 @@
-package ch.test.myjavafx;
+package view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import org.json.simple.parser.ParseException;
 import solver.SudokuSolver;
@@ -17,8 +16,6 @@ public class FxController {
     private SudokuSolver sudokuSolver = new SudokuSolver();
 
     @FXML
-    private Button onLoad;
-    @FXML
     private ListView<String> listViewLoad;
     @FXML
     private TableView tableViewLoad;
@@ -29,32 +26,17 @@ public class FxController {
     @FXML
     private Label actionTargetSolved;
     @FXML
-    private Label actiontarget;
-    @FXML
-    private TextField name;
+    private Label actionTarget;
     @FXML
     private String path;
-    @FXML
-    private BorderPane borderPane;
 
-
-    public FxController() {
-        //System.out.println("RootController init");
-        sudokuSolver.getTest();
-    }
-
-    @FXML
-    protected void onName(ActionEvent event) {
-        String inputName = name.getText();
-        actiontarget.setText("Submit button pressed, name is " + inputName);
-    }
-
+    //on Button Load event choose a JSON-file an display it
     @FXML
     public void onLoad(ActionEvent event) throws IOException, ParseException{
         FileChooser fc = new FileChooser();
 
 
-        fc.setTitle("Wähle die Datei");
+        fc.setTitle("Wähle ein Json-File aus");
         fc.setInitialDirectory(new File(System.getProperty("user.home")));
         fc.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("JSON", "*.json")
@@ -62,11 +44,8 @@ public class FxController {
         File seletedFile = fc.showOpenDialog(null);
 
         if (seletedFile != null) {
-            //listview.getItems().add(seletedFile.getName());
             listViewLoad.getItems().add(seletedFile.getAbsolutePath());
-            String s = sudokuSolver.getTest();
             sudokuSolver.getBoard();
-            actiontarget.setText("Test String " + s);
 
             drawTables(tableViewLoad);
 
@@ -75,7 +54,7 @@ public class FxController {
 
             if(jsonReaderResponse.hasErrors()) {
                 // show error message to user
-                //System.out.println(jsonReaderResponse.getMessage());
+                actionTarget.setText(jsonReaderResponse.getMessage());
             } else {
                 int[][] board = jsonReaderResponse.getSudokuGrid();
                 SudokuSolver sudoku = new SudokuSolver(board);
@@ -94,16 +73,23 @@ public class FxController {
                             solution[r][8]);
 
                     tableViewLoad.getItems().add(sudokuRow);
+
                 }
             }
+            // show error message to user
+            actionTarget.setText(jsonReaderResponse.getMessage());
+
             actionTargetLoad.setText("Loaded");
+
             path = seletedFile.getAbsolutePath();
         } else {
-            //System.out.println("File not found");
+
+            actionTargetLoad.setText("Not found");
         }
 
     }
 
+    // build the Grid Tables
     private void drawTables(TableView tableView){
         TableColumn<SudokuRow, String> tableColumn1 = new TableColumn("");
         tableColumn1.setCellValueFactory(new PropertyValueFactory<>("a"));
@@ -135,12 +121,11 @@ public class FxController {
         tableView.getColumns().add(tableColumn8);
         tableView.getColumns().add(tableColumn9);
     }
+
+    //on Button Solve event show solved Grid
     @FXML
     protected void onSolve(ActionEvent event) throws IOException, ParseException {
-        String s = sudokuSolver.getTest();
         sudokuSolver.getBoard();
-        actiontarget.setText("Test String " + s );
-
 
         drawTables(tableViewSolved);
 

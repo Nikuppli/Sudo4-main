@@ -1,4 +1,4 @@
-package ch.test.myjavafx;
+package view;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -41,15 +41,11 @@ public class FxApp extends Application {
         JsonReaderResponse jsonReaderResponse = jsonReader.readJson("");
 
         if(jsonReaderResponse.hasErrors()) {
-           // System.out.println(jsonReaderResponse.getMessage());
         } else {
             GRID_TO_SOLVE = jsonReaderResponse.getSudokuGrid();
             SudokuSolver sudoku = new SudokuSolver(GRID_TO_SOLVE);
-            //System.out.println("Sudoku loaded");
             sudoku.display();
-
             if (sudoku.solve()) {
-                //System.out.println("Sudoku solved");
                 sudoku.display();
             } else {
                 //System.out.println("Unsolvable");

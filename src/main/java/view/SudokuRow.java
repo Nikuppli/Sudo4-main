@@ -1,4 +1,4 @@
-package ch.test.myjavafx;
+package view;
 
 public class SudokuRow {
     public void setA(String a) { this.a = a; }

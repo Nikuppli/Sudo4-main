@@ -28,6 +28,7 @@
 #tableViewLoad {
     -fx-pref-height: 245;
     -fx-pref-width: 210;
+
 }
 #tableViewSolved {
     -fx-pref-height: 245;
@@ -37,20 +38,15 @@
     -fx-pref-height: 25;
     -fx-pref-width: 590;
 }
-#name{
-    -fx-opacity: 0.5;
-}
+
 #onLoad {
     -fx-border-insets: 20;
 }
-#btnName {
-    -fx-text-fill: #3333ff;
-    -fx-underline: true;
+#actionTargetSolved{
+    -fx-text-fill: red;
+
 }
-#textName {
-    -fx-text-fill: #FFF;
-    -fx-font-weight: 400;
-}
-TableColumn {
-    -fx-content-display: false;
+#actionTargetLoad{
+    -fx-text-fill: green;
+
 }

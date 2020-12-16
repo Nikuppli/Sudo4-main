@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="borderPane" maxWidth="670.0" prefHeight="740.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.test.myjavafx.FxController">
+<BorderPane fx:id="borderPane" maxWidth="670.0" prefHeight="740.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FxController">
 
 
 
@@ -20,14 +20,16 @@
     <center>
         <HBox styleClass="center">
             <Pane styleClass="pane">
-                <TableView fx:id="tableViewLoad"/>
-                <ListView fx:id="listViewLoad"/>
-                <Label fx:id="actionTargetLoad" />
+                <TableView fx:id="tableViewLoad" />
+                <ListView fx:id="listViewLoad" layoutY="264.0" prefWidth="506.0" />
+
+                <Label styleClass="h1" fx:id="actionTargetLoad" layoutY="320.0" />
+                <Label fx:id="actionTarget" layoutY="340.0" />
 
             </Pane>
             <Pane styleClass="pane">
                 <TableView fx:id="tableViewSolved" />
-                <Label fx:id="actionTargetSolved" />
+                <Label styleClass="h1" fx:id="actionTargetSolved" layoutY="320.0"  />
 
             </Pane>
         </HBox>
@@ -37,33 +39,22 @@
 
     <bottom>
         <HBox styleClass="bottom">
-            <Label fx:id="textName" text="Name:" />
-            <TextField fx:id="name">
-                <HBox.margin>
-                   <Insets left="20.0" />
-                </HBox.margin>
-            </TextField>
+            <Pane styleClass="pane">
+                <Button fx:id="onLoad" onAction="#onLoad" text="Json-Datei öffnen">
+                    <HBox.margin>
+                       <Insets left="20.0" />
+                    </HBox.margin>
+                </Button>
+            </Pane>
 
-            <Button fx:id="btnName" onAction="#onName" text="Name">
-                <HBox.margin>
-                   <Insets left="20.0" />
-                </HBox.margin>
-            </Button>
-
-            <Label fx:id="actiontarget" />
-
-            <Button fx:id="onLoad" onAction="#onLoad" text="Json-Datei öffnen">
-                <HBox.margin>
-                   <Insets left="20.0" />
-                </HBox.margin>
-            </Button>
-
-            <Button onAction="#onSolve" text="Solve">
-                <HBox.margin>
-                    <Insets left="20.0" />
-                </HBox.margin>
-            </Button>
-         </HBox>
+            <Pane styleClass="pane">
+                <Button onAction="#onSolve" text="Solve">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </Button>
+            </Pane>
+        </HBox>
     </bottom>
 
 

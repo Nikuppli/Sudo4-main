@@ -1,4 +1,4 @@
-package ch.test.myjavafx;
+package view;
 import javafx.scene.Parent;
 import java.io.IOException;
 //FXML Loader
