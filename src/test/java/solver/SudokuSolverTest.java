@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class SudokuSolverTest {
 
     @Test
-    public void givenBoard_whenSudokuSolve_thenReturnSolvedBoard() {
+    protected void givenBoard_whenSudokuSolve_thenReturnSolvedBoard() {
         //given
         int[][] givenBoard = {
                 {9, 0, 0, 1, 0, 0, 0, 0, 5},

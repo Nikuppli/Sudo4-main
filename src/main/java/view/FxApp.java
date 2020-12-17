@@ -14,7 +14,7 @@ public class FxApp extends Application {
 
     private static Stage primaryStage;
     private static final JsonReader jsonReader = new JsonReader();
-    protected static int[][] GRID_TO_SOLVE = new int[9][9];
+    protected static int[][] gridToSolve = new int[9][9];
 
     //Start Stage
     @Override
@@ -40,8 +40,8 @@ public class FxApp extends Application {
 
         JsonReaderResponse jsonReaderResponse = jsonReader.readJson("");
 
-        GRID_TO_SOLVE = jsonReaderResponse.getSudokuGrid();
-        SudokuSolver sudoku = new SudokuSolver(GRID_TO_SOLVE);
+        gridToSolve = jsonReaderResponse.getSudokuGrid();
+        SudokuSolver sudoku = new SudokuSolver(gridToSolve);
         sudoku.display();
         if (sudoku.solve()) {
             sudoku.display();
