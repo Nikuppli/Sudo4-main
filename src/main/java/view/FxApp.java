@@ -45,8 +45,6 @@ public class FxApp extends Application {
         sudoku.display();
         if (sudoku.solve()) {
             sudoku.display();
-        } else {
-            System.out.println("Unsolvable");
         }
     }
 

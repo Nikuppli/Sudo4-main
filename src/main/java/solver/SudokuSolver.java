@@ -1,7 +1,5 @@
 package solver;
 
-import java.util.Arrays;
-
 public class SudokuSolver{
 
     private int[][] board;
@@ -23,8 +21,6 @@ public class SudokuSolver{
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 this.board[i][j] = board[i][j];
-                //Arrays.copyOf(board[i][j], 0);
-                //Copy of Arrays Anschauen
             }
         }
     }
@@ -58,8 +54,6 @@ public class SudokuSolver{
         return !isInRow(row, number) && !isInCol(col, number) && !isInBox(row, col, number);
     }
 
-
-    //Teil auslagern
     // solve the puzzle/board
     public boolean solve() {
         for (int row = 0; row < SIZE; row++) {

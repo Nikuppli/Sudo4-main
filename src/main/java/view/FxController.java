@@ -17,6 +17,8 @@ public class FxController {
 
     // build the Grid Tables
     private void drawTables(TableView tableView){
+        tableView.getItems().clear();
+        tableView.getColumns().clear();
         TableColumn<SudokuRow, String> tableColumn1 = new TableColumn("");
         tableColumn1.setCellValueFactory(new PropertyValueFactory<>("a"));
         TableColumn<SudokuRow, String> tableColumn2 = new TableColumn("");
@@ -50,9 +52,9 @@ public class FxController {
     @FXML
     private ListView<String> listViewLoad;
     @FXML
-    private TableView tableViewLoad;
+    private TableView<SudokuRow> tableViewLoad;
     @FXML
-    private TableView tableViewSolved;
+    private TableView<SudokuRow> tableViewSolved;
     @FXML
     private Label actionTargetLoad;
     @FXML
@@ -85,6 +87,10 @@ public class FxController {
                 // show error message to user
                 actionTarget.setText(jsonReaderResponse.getMessage());
             } else {
+
+                tableViewSolved.getColumns().clear();
+                tableViewSolved.getItems().clear();
+
                 int[][] board = jsonReaderResponse.getSudokuGrid();
                 SudokuSolver sudoku = new SudokuSolver(board);
                 sudoku.getBoard();
