@@ -13,7 +13,7 @@ import controller.JsonReaderResponse;
 public class FxApp extends Application {
 
     private static Stage primaryStage;
-    private static JsonReader jsonReader = new JsonReader();
+    private static final JsonReader jsonReader = new JsonReader();
     protected static int[][] GRID_TO_SOLVE = new int[9][9];
 
     //Start Stage
@@ -24,7 +24,7 @@ public class FxApp extends Application {
         initRootLayout();
     }
     //initial fxml Layout
-    public void initRootLayout() {
+    private void initRootLayout() {
         try {
             BorderPane rootLayout = (BorderPane) FXMLLoader.loadFXML("layout", "fxml");
             Scene scene = new Scene(rootLayout);

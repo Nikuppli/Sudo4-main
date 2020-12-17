@@ -3,8 +3,8 @@ package solver;
 public class SudokuSolver{
 
     private int[][] board;
-    public static final int EMPTY = 0;
-    public static final int SIZE = 9;
+    private static final int EMPTY = 0;
+    private static final int SIZE = 9;
 
 
     public int[][] getBoard() {
@@ -12,7 +12,7 @@ public class SudokuSolver{
     }
     public SudokuSolver () {
     }
-    public void setGrid(int[][] board) {
+    protected void setGrid(int[][] board) {
         this.board = board;
     }
     public SudokuSolver(int[][] board) {

@@ -66,7 +66,7 @@ public class FxController {
 
     //on Button Load event choose a JSON-file an display it
     @FXML
-    public void onLoad(ActionEvent event) throws IOException, ParseException{
+    private void onLoad(ActionEvent event) throws IOException, ParseException{
         FileChooser fc = new FileChooser();
 
 
@@ -120,7 +120,7 @@ public class FxController {
 
     //on Button Solve event show solved Grid
     @FXML
-    protected void onSolve(ActionEvent event) throws IOException, ParseException {
+    private void onSolve(ActionEvent event) throws IOException, ParseException {
         sudokuSolver.getBoard();
         drawTables(tableViewSolved);
         JsonReader jsonReader = new JsonReader();
